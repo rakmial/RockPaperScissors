@@ -1,8 +1,8 @@
-require('respec')
+require('rspec')
 require('RockPaperScissors')
 
-expect(RockPaperScissors) do
-  it('') do
-    #
+describe(RockPaperScissors) do
+  it('returns "Tie!" when rock vs. rock') do
+    expect(RockPaperScissors.new.shoot("rock","rock")).to(eq("Tie!"))
   end
 end
