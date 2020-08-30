@@ -13,11 +13,7 @@ class RockPaperScissors
   def initialize()
     @win_ray = ["rock", "paper", "scissors", "rock"]
     @scoreboard = [0,0,0]
-    #@mode = mode
-    #if @mode == "pvp"
-    #  include P2Human
-    #else
-    #  include P2Bot
+    @mode = nil
   end
 
   #def p1_input=(p1_input)
@@ -38,15 +34,17 @@ class RockPaperScissors
     end
   end
 
-  #def set_mode=(set_mode)
-  #  puts "play against a friend, or your future AI overlord? [pvp/bot]"
-  #  @set_mode = set_mode
-  #  if @set_mode == "pvp"
-  #    include P2Human
-  #  elsif @set_mode == "bot"
-  #    include P2Bot
-  #  else
-  #    puts "you dare toy with me? I will teach you respect ... AND FEAR"
-  #    include P2Bot
-  #  end
+  def mode=(mode)
+    puts "play against a friend, or your future AI overlord? [pvp/bot]"
+    @mode = mode
+    if @mode == "pvp"
+      include P2Human
+    elsif @mode == "bot"
+      include P2Bot
+    else
+      puts "you dare toy with me? I will teach you respect ... AND FEAR"
+      include P2Bot
+      @mode = "bot"
+    end
+  end
 end

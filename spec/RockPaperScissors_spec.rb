@@ -17,4 +17,14 @@ describe(RockPaperScissors) do
       expect(RockPaperScissors.new.shoot("scissors","rock")).to(eq("rock beats scissors!"))
     end
   end
+  describe("#mode=") do
+    it('gets input from player to allow two-player mode') do
+      p2_test = RockPaperScissors.new
+      expect(p2_test.mode=("pvp")).to(p2_test.class.ancestors.include?("P2Human"))
+    end
+    it('gets input from player to allow player vs bot mode') do
+      bot_test = RockPaperScissors.new
+      expect(bot_test.mode=("bot")).to(bot_test.class.ancestors.include?("P2Bot"))
+    end
+  end
 end
