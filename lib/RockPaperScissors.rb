@@ -12,11 +12,16 @@ class RockPaperScissors
   
   def initialize()
     @win_ray = ["rock", "paper", "scissors", "rock"]
-    @scoreboard = [0,0]
-    @mode = getmode()
-    
+    @scoreboard = [0,0,0]
+    #@mode = mode
+    #if @mode == "pvp"
+    #  include P2Human
+    #else
+    #  include P2Bot
   end
+
   #def p1_input=(p1_input)
+  #def p2_input=(p2_input)
   
   def shoot(p1_input,p2_input)
     if p1_input == p2_input
@@ -33,17 +38,15 @@ class RockPaperScissors
     end
   end
 
-  def get_mode=(get_mode)
-    # get_mode writer method allows for testing and called from script
-    # with gets.chomp fed to interface
-    puts "play against a friend, or your future AI overlord? [pvp/bot]"
-    @get_mode = get_mode
-    if @get_mode == "pvp"
-      include P2Human
-    elsif @get_mode == "bot"
-      include P2Bot
-    else
-      puts "you dare toy with me? I will teach you respect ... AND FEAR"
-      include P2Bot
-    end
+  #def set_mode=(set_mode)
+  #  puts "play against a friend, or your future AI overlord? [pvp/bot]"
+  #  @set_mode = set_mode
+  #  if @set_mode == "pvp"
+  #    include P2Human
+  #  elsif @set_mode == "bot"
+  #    include P2Bot
+  #  else
+  #    puts "you dare toy with me? I will teach you respect ... AND FEAR"
+  #    include P2Bot
+  #  end
 end
